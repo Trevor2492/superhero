@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import CharacterCard from "./CharacterCard";
 
 function App() {
+  const [character, setCharacter] = useState("");
+  const [query, setQuery] = useState("ironman");
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios(
+        `https://superheroapi.com/api/10225131195777441/search/${query}`
+      );
+
+      setCharacter(result.data.results);
+      console.log(result.data.results);
+    };
+
+    fetchData();
+  }, [query]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <input
+        type="text"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+      />
+
+      <div>{character.name}</div>
+
+      {/* <CharacterCard character={character} /> */}
     </div>
   );
 }
