@@ -6,7 +6,7 @@ import token from "./token";
 
 function App() {
   const [characters, setCharacters] = useState("");
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState("batman");
 
   useEffect(() => {
     const fetchData = async () => {

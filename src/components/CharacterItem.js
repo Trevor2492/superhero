@@ -14,7 +14,7 @@ const CharacterItem = ({ character }) => {
           style={{ maxWidth: "100%" }}
         />
         <div>publisher: {character.biography.publisher}</div>
-        {/* Can't use the syntax for "full-name" because 'name' is deprecated */}
+        {/* Can't use the dot notation syntax for "full-name" because 'name' is deprecated */}
         <div>
           full-name:{" "}
           {character.biography["full-name"]
