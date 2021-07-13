@@ -1,19 +1,20 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import CharacterCard from "./CharacterCard";
+import CharacterGrid from "./components/CharacterGrid";
+import token from "./token";
 
 function App() {
-  const [character, setCharacter] = useState("");
-  const [query, setQuery] = useState("ironman");
+  const [characters, setCharacters] = useState("");
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        `https://superheroapi.com/api/10225131195777441/search/${query}`
+        `https://superheroapi.com/api/${token}/search/${query}`
       );
 
-      setCharacter(result.data.results);
+      setCharacters(result.data.results);
       console.log(result.data.results);
     };
 
@@ -26,11 +27,14 @@ function App() {
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
+        style={{ marginTop: 10 }}
       />
 
-      <div>{character.name}</div>
-
-      {/* <CharacterCard character={character} /> */}
+      {characters ? (
+        <CharacterGrid characters={characters} />
+      ) : (
+        <h2>unable to find matching characters. Please refine your search.</h2>
+      )}
     </div>
   );
 }
