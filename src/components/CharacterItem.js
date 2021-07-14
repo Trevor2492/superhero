@@ -5,22 +5,27 @@ import CardContent from "@material-ui/core/CardContent";
 
 const CharacterItem = ({ character }) => {
   return (
-    <Card style={{ margin: 10, maxWidth: "20rem" }}>
+    <Card
+      elevation={3}
+      style={{ margin: 10, maxWidth: "20rem", borderRadius: 10 }}
+    >
       <CardContent>
         <h2>{character.name}</h2>
         <img
           src={character.image.url}
           alt={character.name}
-          style={{ maxWidth: "100%" }}
+          style={{ maxWidth: "100%", borderRadius: 10 }}
         />
-        <div>publisher: {character.biography.publisher}</div>
+        <div>Publisher: {character.biography.publisher}</div>
         {/* Can't use the dot notation syntax for "full-name" because 'name' is deprecated */}
         <div>
-          full-name:{" "}
+          Full-name:{" "}
           {character.biography["full-name"]
             ? character.biography["full-name"]
             : "n/a"}
         </div>
+        <div>Place of Birth: {character.biography["place-of-birth"]}</div>
+        <div>First Appearance: {character.biography["first-appearance"]}</div>
       </CardContent>
     </Card>
   );

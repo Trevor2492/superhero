@@ -33,7 +33,7 @@ function App() {
       {characters ? (
         <CharacterGrid characters={characters} />
       ) : (
-        <h2>unable to find matching characters. Please refine your search.</h2>
+        <h2>Unable to find matching characters. Please refine your search.</h2>
       )}
     </div>
   );
