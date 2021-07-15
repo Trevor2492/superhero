@@ -37,8 +37,8 @@ function App() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
 
-  const handlePopoverOpen = (event) => {
-    setAnchorEl(event.currentTarget);
+  const handlePopoverOpen = (e) => {
+    setAnchorEl(e.currentTarget);
   };
 
   const handlePopoverClose = () => {
@@ -56,19 +56,17 @@ function App() {
         style={{ marginTop: 10 }}
       />
 
+      {/* Displays helpful information when mousover the 'info' icon */}
       <div style={{ position: "absolute", right: 20, top: 20 }}>
-        <InfoOutlinedIcon />
-      </div>
-
-      <div>
-        <Typography
+        <InfoOutlinedIcon
           aria-owns={open ? "mouse-over-popover" : undefined}
           aria-haspopup="true"
           onMouseEnter={handlePopoverOpen}
           onMouseLeave={handlePopoverClose}
-        >
-          Hover with a Popover.
-        </Typography>
+        />
+      </div>
+
+      <div>
         <Popover
           id="mouse-over-popover"
           className={classes.popover}
@@ -79,7 +77,7 @@ function App() {
           anchorEl={anchorEl}
           anchorOrigin={{
             vertical: "bottom",
-            horizontal: "left",
+            horizontal: "right",
           }}
           transformOrigin={{
             vertical: "top",
@@ -88,7 +86,10 @@ function App() {
           onClose={handlePopoverClose}
           disableRestoreFocus
         >
-          <Typography>I use Popover.</Typography>
+          <Typography>
+            You must search for a character. <br /> The superhero API doesn't
+            have an endpoint <br /> to display all characters by default.
+          </Typography>
         </Popover>
       </div>
 
