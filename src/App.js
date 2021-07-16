@@ -53,7 +53,7 @@ function App() {
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        style={{ marginTop: 10 }}
+        style={{ position: "sticky", top: 10, marginTop: 10 }}
       />
 
       {/* Displays helpful information when mousover the 'info' icon */}

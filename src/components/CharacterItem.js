@@ -16,16 +16,25 @@ const CharacterItem = ({ character }) => {
           alt={character.name}
           style={{ maxWidth: "100%", borderRadius: 10 }}
         />
-        <div>Publisher: {character.biography.publisher}</div>
-        {/* Can't use the dot notation syntax for "full-name" because 'name' is deprecated */}
-        <div>
-          Full-name:{" "}
-          {character.biography["full-name"]
-            ? character.biography["full-name"]
-            : "n/a"}
+
+        <div style={{ textAlign: "left" }}>
+          <div>Publisher: {character.biography.publisher}</div>
+          {/* Can't use the dot notation syntax for "full-name" because 'name' is deprecated */}
+          <div>
+            Full-name:{" "}
+            {character.biography["full-name"]
+              ? character.biography["full-name"]
+              : "n/a"}
+          </div>
+
+          <div>Place of Birth: {character.biography["place-of-birth"]}</div>
+          <div>First Appearance: {character.biography["first-appearance"]}</div>
+          <div>Gender: {character.appearance.gender}</div>
+          <div>Race: {character.appearance.race}</div>
+          <div>Height: {character.appearance.height[0]}</div>
+          <div>Weight: {character.appearance.weight[0]}</div>
+          <div>Extra Info: {character.work.occupation}</div>
         </div>
-        <div>Place of Birth: {character.biography["place-of-birth"]}</div>
-        <div>First Appearance: {character.biography["first-appearance"]}</div>
       </CardContent>
     </Card>
   );
