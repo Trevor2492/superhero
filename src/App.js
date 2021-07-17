@@ -52,7 +52,7 @@ function App() {
       <input
         type="text"
         value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={(e) => setTimeout(setQuery(e.target.value), 3000)}
         style={{ position: "sticky", top: 10, marginTop: 10 }}
       />
 
