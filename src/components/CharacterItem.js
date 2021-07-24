@@ -28,7 +28,12 @@ const CharacterItem = ({ character }) => {
           </div>
 
           <div>Place of Birth: {character.biography["place-of-birth"]}</div>
-          <div>First Appearance: {character.biography["first-appearance"]}</div>
+          <div>
+            First Appearance:{" "}
+            {character.biography["first-appearance"].length > 30
+              ? character.biography["first-appearance"].slice(0, 30) + "..."
+              : character.biography["first-appearance"]}
+          </div>
           <div>Gender: {character.appearance.gender}</div>
           <div>Race: {character.appearance.race}</div>
           <div>Height: {character.appearance.height[0]}</div>
