@@ -53,7 +53,16 @@ function App() {
         type="text"
         value={query}
         onChange={(e) => setTimeout(setQuery(e.target.value), 3000)}
-        style={{ position: "sticky", top: 10, marginTop: 10 }}
+        style={{
+          position: "sticky",
+          top: 10,
+          marginTop: 10,
+          outline: "none",
+          height: "30px",
+          fontSize: "25px",
+          border: "1px solid darkgray",
+          borderRadius: 6,
+        }}
       />
 
       {/* Displays helpful information when mousover the 'info' icon */}
