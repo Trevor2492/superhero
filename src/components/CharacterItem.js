@@ -39,6 +39,14 @@ const CharacterItem = ({ character }) => {
           <div>Height: {character.appearance.height[0]}</div>
           <div>Weight: {character.appearance.weight[0]}</div>
           <div>Extra Info: {character.work.occupation}</div>
+
+          <h4>Stats: </h4>
+          <div>Speed: {character.powerstats.speed}</div>
+          <div>Intelligence: {character.powerstats.intelligence}</div>
+          <div>Strength: {character.powerstats.strength}</div>
+          <div>Durability: {character.powerstats.durability}</div>
+          <div>Power: {character.powerstats.power}</div>
+          <div>Combat: {character.powerstats.combat}</div>
         </div>
       </CardContent>
     </Card>
