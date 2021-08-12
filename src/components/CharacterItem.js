@@ -18,6 +18,7 @@ const CharacterItem = ({ character }) => {
         />
 
         <div style={{ textAlign: "left" }}>
+          <h4>Biography: </h4>
           <div>Publisher: {character.biography.publisher}</div>
           {/* Can't use the dot notation syntax for "full-name" because 'name' is deprecated */}
           <div>
@@ -34,11 +35,15 @@ const CharacterItem = ({ character }) => {
               ? character.biography["first-appearance"].slice(0, 30) + "..."
               : character.biography["first-appearance"]}
           </div>
+          <div>Occupation: {character.work.occupation}</div>
+
+          <h4>Appearance: </h4>
           <div>Gender: {character.appearance.gender}</div>
           <div>Race: {character.appearance.race}</div>
           <div>Height: {character.appearance.height[0]}</div>
           <div>Weight: {character.appearance.weight[0]}</div>
-          <div>Extra Info: {character.work.occupation}</div>
+          <div>Eye Color: {character.appearance["eye-color"]}</div>
+          <div>Hair Color: {character.appearance["hair-color"]}</div>
 
           <h4>Stats: </h4>
           <div>Speed: {character.powerstats.speed}</div>

@@ -11,9 +11,17 @@ const CharacterGrid = ({ characters }) => {
         justifyContent: "center",
       }}
     >
-      {characters.map((character) => (
-        <CharacterItem key={character.id} character={character}></CharacterItem>
-      ))}
+      {characters.map((character) =>
+        // Line 16 is a hacky way to avoid displaying characters whose image URL is broken
+        character.powerstats.speed !== "null" ? (
+          <CharacterItem
+            key={character.id}
+            character={character}
+          ></CharacterItem>
+        ) : (
+          ""
+        )
+      )}
     </div>
   );
 };
