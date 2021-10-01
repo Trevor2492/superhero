@@ -103,7 +103,7 @@ function App() {
             If you're using Safari, you must disable cross-origin restrictions
             by going to <br />
             "Develop" then "Disable Cross-Origin Restrictions" then refresh the
-            page.
+            page. Remember to re-enable after you leave the page.
             <br />
             <br />
             In Chrome you can download the extension: "Allow CORS:
