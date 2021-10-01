@@ -7,6 +7,7 @@ import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import Popover from "@material-ui/core/Popover";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+import CORS from "./components/CORS.png";
 
 function App() {
   const [characters, setCharacters] = useState("");
@@ -98,6 +99,22 @@ function App() {
           <Typography>
             You must search for a character. <br /> The superhero API doesn't
             have an endpoint <br /> to display all characters by default.
+            <br /> <br />
+            If you're using Safari, you must disable cross-origin restrictions
+            by going to <br />
+            "Develop" then "Disable Cross-Origin Restrictions" then refresh the
+            page.
+            <br />
+            <br />
+            In Chrome you can download the extension: "Allow CORS:
+            Access-Control-Allow-Origin" and enable it.
+            <br />
+            <br />
+            <img
+              src={CORS}
+              alt="CORS Chrome Extension"
+              style={{ width: 550 }}
+            />
           </Typography>
         </Popover>
       </div>
